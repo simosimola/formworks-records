@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M410 100V410L480 340V30L410 100Z" fill="#E0E0E0"/>
+  
+  <path d="M100 100L170 30H480L410 100H100Z" fill="#F5F5F5"/>
+  
+  <path d="M180 180L230 130V320L180 370V180Z" fill="#D4D4D4"/>
+  
+  <path d="M180 370L230 320H410L360 370H180Z" fill="#A3A3A3"/>
+  
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M30 100H410V480H30V100ZM100 180V400H340V180H100Z" fill="white"/>
+</svg>
