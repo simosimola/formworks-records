@@ -3,85 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formworks</title>
-<link rel="icon" type="image/svg+xml" href="/resources/logos/formworks-logo.svg">
-<link rel="alternate icon" href="/resources/logos/formworks-logo.svg">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>About — Formworks</title>
+<meta name="description" content="Formworks — independent label for experimental electronic music. Digital Oddities.">
+<link rel="icon" type="image/svg+xml" href="resources/logos/formworks-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#1a1718;--fg:#f1f4f5;--muted:#888}
-body{font-family:'Archivo',sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;display:flex;flex-direction:column}
+:root{
+  --set:#12100f;        /* cured concrete black (bg) */
+  --panel:#1b1815;      /* placeholder-replaced below */
+}
+:root{
+  --set:#12100f;
+  --panel:#1b1815;
+  --panel-2:#22201b;
+  --form:#e4e6e4;        /* cool concrete white (ink) */
+  --line:#43514f;        /* structural grey-teal */
+  --line-dim:#2c332f;
+  --mute:#7c8080;
+  --signal:#e4b421;      /* industrial hazard yellow (rare) */
+  --edge:2px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  background:var(--set);color:var(--form);
+  min-height:100vh;display:flex;flex-direction:column;
+  font-size:15px;line-height:1.7;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
-.container{max-width:1400px;margin:0 auto;padding:0 1.5rem}
-header{border-bottom:2px solid var(--fg)}
-header .container{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;padding-bottom:1rem}
-.logo-link{display:flex;align-items:center;gap:0.75rem}
-.logo-link img{height:2.5rem;width:2.5rem}
-.logo-link span{font-size:1.125rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
-nav{display:flex;gap:0.25rem}
-nav a{padding:0.5rem 1rem;font-size:0.875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;transition:background 0.2s,color 0.2s}
-nav a:hover,nav a.active{background:var(--fg);color:var(--bg)}
-.noise-overlay{pointer-events:none;position:fixed;inset:0;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-footer{border-top:2px solid var(--fg);padding:1.5rem 0;text-align:center;font-size:0.875rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-top:auto}
-main{flex:1}
-.section-title{font-size:2rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:3rem;padding-bottom:1rem;border-bottom:2px solid var(--fg)}
-.card-grid{display:grid;gap:0}
-.card-grid.cols-3{grid-template-columns:repeat(3,1fr)}
-.card-grid.cols-4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:768px){.card-grid.cols-3,.card-grid.cols-4{grid-template-columns:1fr}}
-.card{border:2px solid var(--fg);transition:background 0.2s,color 0.2s;overflow:hidden}
-.card:hover{background:var(--fg);color:var(--bg)}
-.card .card-img-wrap{overflow:hidden}
-.card img{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(100%);transition:filter 0.5s,transform 0.5s}
-.card:hover img{filter:grayscale(0%);transform:scale(1.1)}
-.card .card-body{padding:1.5rem}
-.card h2{font-size:1.25rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
-.card .card-meta{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;color:var(--muted)}
-.card:hover .card-meta{color:rgba(26,23,24,0.5)}
-.card .card-desc{font-size:0.875rem;color:var(--muted);letter-spacing:0.03em;margin-top:0.5rem}
-.card:hover .card-desc{color:rgba(26,23,24,0.7)}
-.home{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;padding:1.5rem;text-align:center}
-.home img{width:8rem;height:8rem;margin-bottom:2rem}
-.home h1{font-size:clamp(2rem,5vw,3.75rem);font-weight:700;letter-spacing:0.1em;margin-bottom:1rem;text-transform:uppercase}
-.home p{color:var(--muted);font-size:1.125rem;max-width:36rem;margin-bottom:3rem;letter-spacing:0.05em}
-.home-links{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center}
-.home-links a{border:2px solid var(--fg);padding:0.75rem 2rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;font-size:0.875rem;transition:background 0.2s,color 0.2s}
-.home-links a:hover{background:var(--fg);color:var(--bg)}
-.about{max-width:42rem;margin:0 auto;padding:4rem 1.5rem}
-.about p{font-size:0.875rem;line-height:1.8;letter-spacing:0.03em;margin-bottom:1.5rem}
-.about .muted{color:var(--muted)}
-.artist-detail{max-width:42rem;margin:0 auto;padding:4rem 1.5rem}
-.artist-detail img{width:100%;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--fg);margin-bottom:3rem}
-.artist-detail .back{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);display:inline-block;margin-bottom:2rem;transition:color 0.2s}
-.artist-detail .back:hover{color:var(--fg)}
-.artist-detail .bio{font-size:0.875rem;line-height:1.8;letter-spacing:0.03em;margin-bottom:1.5rem}
-.artist-detail .bio.muted{color:var(--muted)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+/* concrete grain */
+.grain{pointer-events:none;position:fixed;inset:0;z-index:9998;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---- structural column: the formwork frame with tie-rod nodes ---- */
+.column{width:100%;max-width:1180px;margin:0 auto;position:relative;flex:1;
+  border-left:1px solid var(--line);border-right:1px solid var(--line)}
+/* tie-rod holes running down both rails */
+.column::before,.column::after{content:"";position:absolute;top:0;bottom:0;width:9px;pointer-events:none;
+  background-image:radial-gradient(circle,var(--line) 0 2px,transparent 2.6px);
+  background-size:9px 84px;background-position:center 30px;
+  transform-origin:top;}
+.column::before{left:-5px}
+.column::after{right:-5px}
+.inner{padding:0 clamp(1.1rem,4vw,3rem)}
+
+/* structural divider = dimension/section line */
+.rule{position:relative;height:1px;background:var(--line);margin:0;
+  transform-origin:left;}
+.rule .tag{position:absolute;top:50%;left:clamp(1.1rem,4vw,3rem);transform:translateY(-50%);
+  background:var(--set);padding:0 .7rem 0 0;font-size:.66rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--mute)}
+.rule .node{position:absolute;top:50%;right:clamp(1.1rem,4vw,3rem);transform:translate(50%,-50%);
+  width:7px;height:7px;border-radius:50%;background:var(--set);border:1px solid var(--line)}
+
+/* ---- header ---- */
+header{border-bottom:1px solid var(--line)}
+.hbar{max-width:1180px;margin:0 auto;display:flex;align-items:stretch;justify-content:space-between;
+  border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.85rem;padding:1.05rem clamp(1.1rem,4vw,3rem);
+  border-right:1px solid var(--line)}
+.brand img{height:1.9rem;width:1.9rem}
+.brand b{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.08rem;
+  letter-spacing:.14em;text-transform:uppercase}
+.nav{display:flex;align-items:stretch}
+.nav a{display:flex;align-items:center;padding:0 clamp(.7rem,2vw,1.35rem);
+  font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);
+  border-left:1px solid var(--line-dim);transition:color .18s,background .18s}
+.nav a:hover{color:var(--form)}
+.nav a.active{color:var(--set);background:var(--signal)}
+
+/* ---- footer / colophon ---- */
+footer{border-top:1px solid var(--line);color:var(--mute)}
+.fbar{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;
+  align-items:baseline;justify-content:space-between;
+  border-left:1px solid var(--line);border-right:1px solid var(--line);
+  padding:1rem clamp(1.1rem,4vw,3rem);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase}
+.fbar .sys{color:var(--line);display:flex;gap:.6rem;align-items:center}
+.fbar .sys b{color:var(--mute);font-weight:500}
+
+/* ---- eyebrow / field labels ---- */
+.eyebrow{font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:var(--signal)}
+.field{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+
+/* ---- HERO (home) ---- */
+.hero{padding:clamp(3rem,9vw,7rem) 0 clamp(2.5rem,7vw,5rem)}
+.hero .mold{position:relative;border:var(--edge) solid var(--line);
+  padding:clamp(2rem,7vw,4.5rem) clamp(1.3rem,5vw,3.5rem);}
+/* corner tie-holes on the mold */
+.hero .mold .pin{position:absolute;width:9px;height:9px;border-radius:50%;
+  background:var(--set);border:1.5px solid var(--line)}
+.hero .mold .pin.tl{top:-5px;left:-5px}.hero .mold .pin.tr{top:-5px;right:-5px}
+.hero .mold .pin.bl{bottom:-5px;left:-5px}.hero .mold .pin.br{bottom:-5px;right:-5px}
+.hero .stamp{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);
+  border-bottom:1px solid var(--line-dim);padding-bottom:1rem;margin-bottom:clamp(1.5rem,5vw,2.75rem)}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(3rem,15vw,10rem);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;
+  word-break:break-word}
+.hero h1 .r{color:var(--signal)}
+.hero .lede{display:flex;align-items:baseline;gap:1rem;margin-top:clamp(1.25rem,4vw,2rem);
+  flex-wrap:wrap}
+.hero .lede .cast{font-size:1.05rem;letter-spacing:.06em;color:var(--form)}
+.hero .lede .cast::before{content:"▚ ";color:var(--signal)}
+.hero .ways{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(2rem,6vw,3.25rem);
+  border:1px solid var(--line)}
+.hero .ways a{flex:1 1 33%;min-width:150px;padding:1.05rem 1.4rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--form);
+  border-right:1px solid var(--line-dim);transition:background .18s,color .18s}
+.hero .ways a:last-child{border-right:0}
+.hero .ways a .n{color:var(--mute);font-size:.66rem;transition:color .18s}
+.hero .ways a:hover{background:var(--signal);color:var(--set)}
+.hero .ways a:hover .n{color:var(--set)}
+
+/* ---- page head (interior pages) ---- */
+.phead{padding:clamp(2.25rem,6vw,4rem) 0 clamp(1.5rem,4vw,2.5rem)}
+.phead .eyebrow{display:block;margin-bottom:1rem}
+.phead h1{font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(2.2rem,7vw,4.25rem);line-height:.9;letter-spacing:-.01em;text-transform:uppercase}
+.phead .sub{color:var(--mute);font-size:.82rem;letter-spacing:.04em;margin-top:1rem;max-width:44ch}
+
+/* ---- roster (artists) ---- */
+.roster{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.unit{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;transition:background .18s}
+.unit:hover{background:var(--panel)}
+.unit .imgwrap{overflow:hidden;border-bottom:1px solid var(--line-dim);aspect-ratio:1;background:#000}
+.unit img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);
+  transition:filter .5s,transform .5s}
+.unit:hover img{filter:grayscale(0);transform:scale(1.05)}
+.unit .u-body{padding:1.1rem clamp(1rem,2.5vw,1.5rem) 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.unit .u-top{display:flex;justify-content:space-between;align-items:baseline}
+.unit .u-cat{font-size:.66rem;letter-spacing:.2em;color:var(--mute)}
+.unit .u-arrow{color:var(--mute);transition:color .18s,transform .18s}
+.unit:hover .u-arrow{color:var(--signal);transform:translateX(3px)}
+.unit h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;
+  letter-spacing:.01em;text-transform:uppercase;margin-top:.15rem}
+.unit .u-mat{font-size:.74rem;color:var(--mute);letter-spacing:.03em}
+.unit .u-mat b{color:var(--form);font-weight:500}
+
+/* ---- catalog (releases) ---- */
+.catalog{border-top:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:88px 64px 1fr 1fr 96px;align-items:center;gap:1.25rem;
+  padding:.9rem clamp(1.1rem,4vw,3rem);border-bottom:1px solid var(--line-dim);
+  transition:background .18s}
+.crow.head{border-bottom:1px solid var(--line);color:var(--mute);
+  font-size:.64rem;letter-spacing:.22em;text-transform:uppercase}
+.crow.item:hover{background:var(--panel)}
+.crow .c-cat{font-size:.8rem;letter-spacing:.1em;color:var(--signal)}
+.crow .c-cover{width:56px;height:56px;object-fit:cover;border:1px solid var(--line);
+  filter:grayscale(.55);transition:filter .4s}
+.crow.item:hover .c-cover{filter:grayscale(0)}
+.crow .c-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;
+  letter-spacing:.01em;text-transform:uppercase}
+.crow .c-artist{color:var(--mute);font-size:.82rem;letter-spacing:.04em}
+.crow .c-cast{font-size:.74rem;letter-spacing:.14em;color:var(--mute);text-align:right}
+
+/* ---- artist detail sheet ---- */
+.sheet{padding:clamp(1.5rem,4vw,2.5rem) 0 clamp(3rem,7vw,5rem)}
+.sheet .back{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--mute);padding:1.4rem 0;transition:color .18s}
+.sheet .back:hover{color:var(--signal)}
+.sheet .frame{border:var(--edge) solid var(--line);position:relative}
+.sheet .frame .pin{position:absolute;width:9px;height:9px;border-radius:50%;
+  background:var(--set);border:1.5px solid var(--line)}
+.sheet .frame .pin.tl{top:-5px;left:-5px}.sheet .frame .pin.tr{top:-5px;right:-5px}
+.sheet .frame .pin.bl{bottom:-5px;left:-5px}.sheet .frame .pin.br{bottom:-5px;right:-5px}
+.sheet .frame img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.sheet .meta{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0}
+.sheet .meta .cell{padding:1rem 1.25rem;border-right:1px solid var(--line-dim)}
+.sheet .meta .cell:last-child{border-right:0}
+.sheet .meta .cell .field{display:block;margin-bottom:.4rem}
+.sheet .meta .cell .v{font-size:.9rem;color:var(--form);letter-spacing:.02em}
+.sheet h1{font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(2.5rem,9vw,5rem);line-height:.9;letter-spacing:-.01em;text-transform:uppercase;
+  margin:clamp(1.75rem,5vw,2.75rem) 0 1rem}
+.sheet .genre{font-size:1rem;color:var(--form);letter-spacing:.03em}
+.sheet .go{display:inline-flex;align-items:center;gap:.7rem;margin-top:1.75rem;
+  border:1px solid var(--line);padding:.85rem 1.4rem;font-size:.74rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--form);transition:background .18s,color .18s}
+.sheet .go:hover{background:var(--signal);color:var(--set)}
+
+/* ---- about doc ---- */
+.doc{padding:clamp(2rem,6vw,4rem) 0 clamp(3rem,8vw,6rem);max-width:760px}
+.doc .lead{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.5rem,4vw,2.15rem);
+  line-height:1.15;letter-spacing:-.01em;color:var(--form);margin-bottom:2rem}
+.doc p.body{font-size:.98rem;line-height:1.85;color:var(--form);margin-bottom:1.4rem;max-width:60ch}
+.doc .colophon{margin-top:clamp(2.5rem,6vw,4rem);border-top:1px solid var(--line-dim);padding-top:1.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem 2rem}
+.doc .colophon .k{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);
+  margin-bottom:.35rem}
+.doc .colophon .val{font-size:.9rem;color:var(--form)}
+.doc .colophon a{color:var(--signal)}
+.doc .colophon a:hover{text-decoration:underline}
+
+/* ---- load assembly animation ---- */
+@media (prefers-reduced-motion:no-preference){
+  .column{animation:rail .7s ease-out both}
+  .rule{animation:seam .6s .15s ease-out both}
+  .reveal{opacity:0;transform:translateY(14px);animation:rise .6s ease-out forwards}
+  .reveal.d1{animation-delay:.18s}.reveal.d2{animation-delay:.3s}
+  .reveal.d3{animation-delay:.42s}.reveal.d4{animation-delay:.54s}
+  @keyframes rail{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes seam{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---- responsive ---- */
+@media (max-width:860px){
+  .roster{grid-template-columns:repeat(2,1fr)}
+  .crow{grid-template-columns:70px 1fr 70px;gap:.9rem}
+  .crow .c-cover,.crow .c-artist,.crow .c-covh{display:none}
+  .crow.head .c-artist{display:none}
+  .sheet .meta{grid-template-columns:1fr}
+  .sheet .meta .cell{border-right:0;border-bottom:1px solid var(--line-dim)}
+  .doc .colophon{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .roster{grid-template-columns:1fr}
+  .hbar{flex-direction:column}
+  .brand{border-right:0;border-bottom:1px solid var(--line);justify-content:space-between}
+  .nav{border-top:0}
+  .nav a{flex:1;justify-content:center;border-left:1px solid var(--line-dim)}
+  .nav a:first-child{border-left:0}
+  .hero .ways a{flex-basis:100%;border-right:0;border-bottom:1px solid var(--line-dim)}
+  .hero .ways a:last-child{border-bottom:0}
+}
 </style>
 </head>
 <body>
-<div class="noise-overlay"></div>
-<header>
-<div class="container">
-<a class="logo-link" href="index.html">
-<img src="resources/logos/formworks-logo.svg" alt="Formworks">
-<span>FoЯmworks</span>
+<div class="grain"></div><header>
+<div class="hbar">
+<a class="brand" href="index.html" aria-label="Formworks home">
+<img src="resources/logos/formworks-logo.svg" alt="">
+<b>Fo&#1071;mworks</b>
 </a>
-<nav><a href="index.html">Home</a>
-<a href="artists.html">Artists</a>
-<a href="releases.html">Releases</a>
-<a href="about.html" class="active">About</a></nav>
+<nav class="nav"><a href="index.html">Home</a><a href="artists.html">Artists</a><a href="releases.html">Releases</a><a href="about.html" class="active">About</a></nav>
 </div>
 </header>
-<main>
-<div class="about">
-<h1 class="section-title">About</h1>
-<p>Formworks is an independent record label mainly releasing experimental electronic music.</p>
-<p>We release jungle, IDM, breakcore and other experimental genres.</p>
-<p class="muted">For submissions and inquiries: info@formworksrecords.xyz</p>
-</div></main>
+<div class="column">
+<div class="inner">
+<section class="phead reveal">
+<span class="eyebrow">Colophon &mdash; 01</span>
+<h1>About</h1>
+</section>
+<section class="doc reveal d1">
+<p class="lead">Formworks is an independent record label mainly releasing experimental electronic music.</p>
+<p class="body">We release jungle, IDM, breakcore and other experimental genres.</p>
+<div class="colophon">
+<div><div class="k">Submissions &amp; inquiries</div><div class="val"><a href="mailto:info@formworksrecords.xyz">info@formworksrecords.xyz</a></div></div>
+<div><div class="k">Catalog prefix</div><div class="val">FW</div></div>
+<div><div class="k">Established</div><div class="val">2026</div></div>
+<div><div class="k">Output</div><div class="val">Experimental electronic</div></div>
+</div>
+</section>
+</div>
+</div>
 <footer>
-<div class="container">&copy; 2026 Formworks. All rights reserved.</div>
+<div class="fbar">
+<span>&copy; 2026 Formworks &mdash; All rights reserved</span>
+<span class="sys">SYS <b id="clock">&mdash;</b></span>
+</div>
 </footer>
+<script>
+(function(){
+  var el=document.getElementById('clock');
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var d=new Date();
+    el.textContent=d.getFullYear()+'·'+pad(d.getMonth()+1)+'·'+pad(d.getDate())
+      +' // '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
 </body>
 </html>
