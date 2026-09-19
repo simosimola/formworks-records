@@ -396,12 +396,12 @@ main{ flex: 1; }
   transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 .stream-links a:hover{ background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.stream-links a .arrow{
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 500;
-  transition: transform 0.2s var(--ease);
+.stream-links a svg{
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  fill: currentColor;
 }
-.stream-links a:hover .arrow{ transform: translateX(3px); }
 
 /* ---- Scroll reveal: CSS-only state, JS toggles .is-visible.
    Collapses to a no-op under reduced motion. ---- */
