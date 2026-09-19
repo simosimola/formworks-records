@@ -332,6 +332,77 @@ main{ flex: 1; }
 }
 .artist-detail .catalog-link:hover{ background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
+/* ---- Release landing page (streaming links) ---- */
+.release-landing{ max-width: 28rem; margin: 0 auto; padding: 4rem 1.5rem 5rem; text-align: center; }
+.release-landing .back{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  transition: color 0.2s var(--ease);
+}
+.release-landing .back:hover{ color: var(--accent); }
+.release-landing .media{
+  border: var(--border-w) solid var(--fg);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.release-landing .media img{ width: 100%; aspect-ratio: 1; object-fit: cover; }
+.release-landing .eyebrow{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.release-landing h1{
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.release-landing .by{
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
+}
+.release-landing .by a{
+  color: var(--fg);
+  border-bottom: var(--hair-w) solid var(--muted);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.release-landing .by a:hover{ color: var(--accent); border-color: var(--accent); }
+
+.stream-links{ display: flex; flex-direction: column; gap: 0.75rem; }
+.stream-links a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--border-w) solid var(--fg);
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.85rem;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.stream-links a:hover{ background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.stream-links a .arrow{
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  transition: transform 0.2s var(--ease);
+}
+.stream-links a:hover .arrow{ transform: translateX(3px); }
+
 /* ---- Scroll reveal: CSS-only state, JS toggles .is-visible.
    Collapses to a no-op under reduced motion. ---- */
 [data-reveal]{ opacity: 1; transform: none; }
