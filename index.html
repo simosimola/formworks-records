@@ -1,52 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formworks</title>
-<meta name="description" content="Formworks is an independent electronic label releasing jungle, IDM, breakcore and other experimental work.">
-<link rel="icon" type="image/svg+xml" href="/resources/logos/formworks-logo.svg">
-<link rel="alternate icon" href="/resources/logos/formworks-logo.svg">
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formworks — Digital Oddities</title>
+<meta name="description" content="Formworks is an independent record label releasing jungle, IDM, breakcore and other experimental electronic music.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=Courier+Prime:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="noise-overlay"></div>
-<header class="site-header">
-<div class="container">
-<a class="logo-link" href="index.html">
-<img src="resources/logos/formworks-logo.svg" alt="Formworks">
-<span>FOЯMWORKS</span>
-</a>
-<nav class="site-nav">
-<a href="index.html" class="active">Home</a>
-<a href="artists.html">Artists</a>
-<a href="releases.html">Releases</a>
-<a href="about.html">About</a>
-</nav>
+<div class="wrap" data-barba="wrapper">
+  <div class="noise-overlay"></div>
+
+  <header class="site-header">
+    <a class="brand-row" href="/index.html">
+      <img src="/resources/logos/formworks-logo.svg" alt="">
+      <span class="wordmark">FOЯMWORKS</span>
+    </a>
+    <div class="nav-strip">
+      <nav>
+        <a href="/index.html#top">Home</a>
+        <a href="/index.html#artists">Artists</a>
+        <a href="/index.html#releases">Releases</a>
+      </nav>
+    </div>
+  </header>
+
+  <div data-barba="container" data-barba-namespace="home">
+  <main class="page-content">
+  <div id="top" class="hero">
+    <div class="hero-bento">
+      <div class="hero-main">
+        <h1>Digital<br><span>Oddities</span></h1>
+        <p>Formworks is an independent record label mainly releasing experimental electronic music.</p>
+        <div class="btn-row">
+          <a class="btn-block solid" href="/landing_pages/release-3d-in-93.html">Hear the latest release</a>
+          <a class="btn-block" href="#artists">View the roster</a>
+        </div>
+      </div>
+      <a class="hero-teaser" href="/landing_pages/release-3d-in-93.html">
+        <div class="tag-label"><span class="dot"></span>Latest</div>
+        <h2>3D in '93 EP</h2>
+        <img src="/resources/releases-covers/wasteman/3d_in_93/3d_in_93_cover.webp" alt="3D in '93 EP cover art">
+        <span class="btn-block solid">Listen</span>
+      </a>
+    </div>
+  </div>
+
+  <section id="artists" class="section-block">
+    <div class="section-title-row">
+      <h2 class="section-title">Artists</h2>
+      <span class="section-count mono" data-count="3">03 / 03</span>
+    </div>
+    <div class="card-grid">
+      <a class="artist-card" href="/artist-wasteman.html">
+        <img src="/resources/artist-logos/wasteman.webp" alt="Wasteman">
+        <span class="code-mono">A-01</span>
+        <h3>Wasteman</h3>
+        <span class="view-link">View artist</span>
+      </a>
+      <a class="artist-card" href="/artist-branik.html">
+        <img src="/resources/artist-logos/branik-logo.webp" alt="Braník">
+        <span class="code-mono">A-02</span>
+        <h3>Braník</h3>
+        <span class="view-link">View artist</span>
+      </a>
+      <a class="artist-card" href="/artist-808andafraid.html">
+        <img src="/resources/artist-logos/808andafraid.webp" alt="808 and Afraid">
+        <span class="code-mono">A-03</span>
+        <h3>808 and Afraid</h3>
+        <span class="view-link">View artist</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="releases" class="section-block">
+    <div class="section-title-row">
+      <h2 class="section-title">Releases</h2>
+      <span class="section-count mono" data-count="1">01 / 01</span>
+    </div>
+    <a class="release-bento" href="/landing_pages/release-3d-in-93.html">
+      <div class="release-cover"><img src="/resources/releases-covers/wasteman/3d_in_93/3d_in_93_cover.webp" alt="3D in '93 EP cover art"></div>
+      <div class="release-info">
+        <span class="code-mono">FW-001 / 2026</span>
+        <h3>3D in '93 EP</h3>
+        <span class="artist">Wasteman</span>
+        <span class="btn-block solid">Listen</span>
+      </div>
+    </a>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <span>© 2026 Formworks. All rights reserved.</span>
+    </div>
+  </footer>
+  </div>
 </div>
-</header>
-<main id="main">
-<div class="hero">
-<p class="eyebrow" data-reveal>Est. 2026</p>
-<img src="resources/logos/formworks-logo.svg" alt="Formworks" data-reveal>
-<h1 data-reveal>FOЯMWORKS</h1>
-<p class="tagline" data-reveal>Digital Oddities</p>
-<div class="hero-links" data-reveal>
-<a href="artists.html">Artists</a>
-<a href="releases.html">Releases</a>
-<a href="about.html">About</a>
-</div>
-</div>
-</main>
-<footer class="site-footer">
-<div class="container">
-<span>&copy; 2026 Formworks. All rights reserved.</span>
-<span class="sys-status">SYS <span class="dot">·</span> Online</span>
-</div>
-</footer>
-<script src="js/main.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@barba/core@2.7.2/dist/barba.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
