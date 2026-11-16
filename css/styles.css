@@ -159,7 +159,6 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--glow);border-
 /* ---- detail pages ---- */
 .detail-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center;max-width:62rem;padding-top:6px}
 .detail-grid img{width:100%;max-height:34rem;aspect-ratio:1;object-fit:cover;border:6px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.5)}
-.detail-info .code{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:6px}
 .detail-info h1{margin:0 0 22px;font-size:clamp(1.9rem,4vw,3rem);font-weight:700;line-height:1.05;color:#2a2c31;text-shadow:0 1px 0 #fff;overflow-wrap:anywhere}
 .landing{max-width:26rem;margin:0 auto;text-align:center}
 .landing .back{display:flex;justify-self:start;width:max-content}
@@ -184,11 +183,11 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--glow);border-
 .list tbody tr:nth-child(odd){background:#fff}
 .list tbody tr:nth-child(even){background:#edf3fe}
 .list tbody tr:hover{background:linear-gradient(#5d94e6,var(--sel));color:#fff}
-.list tbody tr:hover a,.list tbody tr:hover .cat-code,.list tbody tr:hover .year,.list tbody tr:hover .artist-name{color:#fff}
+.list tbody tr:hover a,.list tbody tr:hover .year,.list tbody tr:hover .artist-name{color:#fff}
 .list .c-cover{width:3.2rem;padding-right:0}
 .list .c-cover img{width:30px;height:30px;object-fit:cover;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.5)}
 .list .release-title{font-weight:700}
-.list .cat-code,.list .year,.list .artist-name{color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.list .year,.list .artist-name{color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 .list a:hover{text-decoration:underline}
 /* whole row is the release link: the title's link is stretched over the row,
    the artist link stays above it so it still goes to the artist page */

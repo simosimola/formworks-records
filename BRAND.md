@@ -46,16 +46,12 @@ Metaphor mapping, so new content picks the right pattern:
 | Thing | Write it as |
 |---|---|
 | Label | **Formworks** (title case in text). Wordmark graphic uses the reversed R: **FOЯMWORKS** |
-| Artists | **Wasteman**, **Braník** (with the diacritic), **808 and Afraid** (never "808 & Afraid", never "808andafraid" in visible text) |
+| Artists | **Wasteman**, **Braník** (with the diacritic), **DJ Show** (two words, capital D and J, capital S) |
 | Release | **3D in '93 EP** (straight apostrophe in HTML text, in the `<title>`, and in alt text) |
 
-## 4. Catalogue and ID numbering
+## 4. Catalogue numbering
 
-Codes are shown in small muted tabular-number text above or below titles.
-
-- **Artists:** `A-01`, `A-02`, `A-03`, … in the order added (Wasteman A-01, Braník A-02, 808 and Afraid A-03). Next artist: `A-04`.
-- **Releases:** `FW-001`, `FW-002`, … plus year where space allows: `FW-001 / 2026`. In the catalogue table the cat # and year are separate columns.
-- Never reuse or renumber a code.
+There are no catalogue or artist numbers anywhere on the site (no `FW-001`, no `A-01`). Don't add them to pages, cards or tables. Releases show their year only.
 
 ## 5. Logo
 
@@ -63,6 +59,8 @@ Files in `resources/logos/`:
 
 - `formworks-logo.svg`: the mark, an isometric extruded square frame in four greys (`#F5F5F5` top, `#E0E0E0` right side, `#D4D4D4` inner left, `#A3A3A3` inner bottom) plus white face. **It is white/grey artwork, so it only works on a coloured or dark surface.** On the site it always sits on the blue **app-icon** tile (`.app-icon`: Aqua blue radial gradient, rounded square, gloss highlight, drop shadow), at ~62% of the tile.
 - `formworks-text.svg`: wordmark **FOЯMWORKS**, Archivo Black (weight 900), letter-spacing 8, colour `#f1f4f5`, reversed Я. Use it on dark/coloured backgrounds only.
+
+- `favicon.svg` (+ `favicon-180.png` fallback / touch icon): the mark on the blue app-icon tile, so it stays visible on light and dark browser tabs. Every page links it in `<head>`.
 
 Rules:
 - Don't recolour, stretch, outline, add effects to, or re-typeset the logo or wordmark. Don't type "FOЯMWORKS" in a different font as a substitute for the SVG.
@@ -147,10 +145,10 @@ Copy the existing markup; all selectors live in `css/styles.css`.
 - **Sidebar** (`.sidebar`, `.item`, `.group`): groups are *Home*, **Artists**, **Releases**, **Links** (About, Instagram). Active item is the blue gel with `aria-current="page"`. Folder icon (`#i-folder`) for Home and artists, file icon (`#i-file`) for releases and About, list icon (`#i-list`) for Catalogue, Instagram tile for links.
 - **Buttons** (`.btn`): 22px tall, fully rounded gel. Grey = secondary. `.solid` = primary Aqua blue. `.solid.default` adds the pulsing default-button animation: **at most one per page**, on the main action (currently only home's "Hear the latest release"). Streaming buttons: `.stream` stacks 28px-tall buttons with the platform glyph (Spotify, Apple Music).
 - **Back link** (`.back`): styled as a small gel button, text `← Back to <Section>`.
-- **Icon grid** (`.area` / `.iconview` / `.grid` / `.file`): `.sub` code above, `.name` bold pill (turns selection blue on hover), optional second `.sub`, `.cta` or `.btn`.
+- **Icon grid** (`.area` / `.iconview` / `.grid` / `.file`): `.name` bold pill (turns selection blue on hover), optional second `.sub`, `.cta` or `.btn`.
 - **Group box** (`.sec`) with `.sec-head`: for catalogue-type content.
 - **List view** (`.list`): header gel bar; alternating white / `#edf3fe` rows; the whole row links to the release; artist link sits above it.
-- **Detail page** (`.detail-grid`): image left, info right (`.code`, `h1`, button). **Release landing** (`.landing`): centred, max 26rem, cover → code → h1 → "By <artist>" → stream buttons.
+- **Detail page** (`.detail-grid`): image left, info right (`h1`, button). **Release landing** (`.landing`): centred, max 26rem, cover → year → h1 → "By <artist>" → stream buttons.
 - **Alert dialog** (`.error`): for 404/empty states.
 - **Corners & depth:** buttons/pills fully rounded (11–14px), panels 4–6px, app icon ~23% radius. Gloss gradients (`--gloss`, `--gloss-soft`), inset highlights, small drop shadows. No hard flat shadows.
 - **Scrollbar:** custom Aqua blue scrollbar on `.pane`; leave as is.
@@ -174,8 +172,8 @@ Restrained and period-appropriate: 0.18s opacity fade when the pane swaps; the d
 4. Keep the inline SVG sprite block (`#i-folder`, `#i-file`, `#i-list`, `#i-instagram`), the full sidebar, `<main class="pane" id="pane" tabindex="-1">`, the `.statusbar`, `#route-announcer`, and `<script src="/js/main.js">`. Mark the current page `active` + `aria-current="page"` in the sidebar.
 5. Use **root-absolute paths** (`/css/styles.css`, `/resources/...`, `/artist-x.html`).
 6. **Titles:** the page `<title>` is also the window title bar. Always `<Page> - Formworks` (plain hyphen), e.g. `Digital Oddities - Formworks` (home), `Catalogue - Formworks`, `Wasteman - Formworks`, `3D in '93 EP - Formworks`, `404 - Formworks`. Keep `<title>` and the `.title` span identical.
-7. **When adding an artist:** new `artist-<slug>.html`, new `A-0n` code, add to the sidebar on **every** page, the Home artist grid, and the artist logo in `resources/artist-logos/`.
-8. **When adding a release:** new `landing_pages/<artist>-<release-slug>.html`, new `FW-00n` code, cover at the folder path in §8, add to the sidebar (**Releases** group) on every page, the Home releases grid, and a new row in `catalogue.html`. Update "Hear the latest release" and the utility window on Home to point at the newest release.
+7. **When adding an artist:** new `artist-<slug>.html`, add to the sidebar on **every** page, the Home artist grid, and the artist logo in `resources/artist-logos/`.
+8. **When adding a release:** new `landing_pages/<artist>-<release-slug>.html`, cover at the folder path in §8, add to the sidebar (**Releases** group) on every page, the Home releases grid, and a new row in `catalogue.html`. Update "Hear the latest release" and the utility window on Home to point at the newest release.
 9. External links open with `target="_blank" rel="noopener noreferrer"` plus a `<span class="visually-hidden"> (opens in a new tab)</span>`.
 10. The sidebar and status bar are duplicated on every page. Any change to them must be applied to all pages.
 
@@ -193,7 +191,7 @@ Restrained and period-appropriate: 0.18s opacity fade when the pane swaps; the d
 
 - No new fonts, icon libraries, CSS frameworks or JS libraries; the site is self-contained.
 - No dark mode, no flat/material/neumorphic styling, no neon or cyber/glitch effects.
-- No stock photography, no emoji, no all-caps shouting. Small caps-like codes (`FW-001`, `A-01`) are the exception.
+- No stock photography, no emoji, no all-caps shouting.
 - Don't recolour the logo, crop the covers non-square, or add a drop shadow style that isn't already defined.
 - Don't hard-code a new colour or size when an existing variable/pattern covers it.
 
