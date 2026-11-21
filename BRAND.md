@@ -47,7 +47,7 @@ Metaphor mapping, so new content picks the right pattern:
 |---|---|
 | Label | **Formworks** (title case in text). Wordmark graphic uses the reversed R: **FOЯMWORKS** |
 | Artists | **Wasteman**, **Braník** (with the diacritic), **DJ Show** (two words, capital D and J, capital S) |
-| Release | **3D in '93 EP** (straight apostrophe in HTML text, in the `<title>`, and in alt text) |
+| Releases | **B2B SaaS is the Future of Software EP** (long names in the sidebar are wrapped in `<span class="lbl">` so they truncate with an automatic ellipsis, full name in the `title` attribute), **3D in '93 EP** (straight apostrophe in HTML text, in the `<title>`, and in alt text) |
 
 ## 4. Catalogue numbering
 
